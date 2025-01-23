@@ -3417,7 +3417,7 @@ int hws_audio_register(struct hws_pcie_dev *dev)
 		 snd_pcm_lib_preallocate_pages_for_all(
             pcm,
             SNDRV_DMA_TYPE_CONTINUOUS,
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6,1,0))
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(5,19,0))
 			card->dev,
 #else
             snd_dma_continuous_data(GFP_KERNEL),
